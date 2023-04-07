@@ -13,3 +13,13 @@ chrome.webRequest.onHeadersReceived.addListener(
   }, {
     urls: ["<all_urls>"]
   }, ["blocking", "responseHeaders"]);
+
+  // background.js
+chrome.runtime.onConnect.addListener(function(port) {
+  if (port.name === "popup") {
+      port.onDisconnect.addListener(function() {
+        var currentUrl = document.getElementById("iframe_id").contentWindow.location.href
+        localStorage.setItem("url",currentUrl);
+      });
+  }
+});
