@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "My Extension",
+  "name": "PopUp WebView",
   "version": "1.0",
-  "description": "This extension loads a web page inside of the extension.",
+  "description": "Load a web page inside of the extension.",
   "permissions": [
     "activeTab",
 	"tabs",
@@ -18,5 +18,10 @@
   "background": {
     "scripts": ["background.js"],
     "persistent": true
+  },
+   "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
 }
